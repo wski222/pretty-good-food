@@ -218,3 +218,126 @@ body{overflow-x:hidden}
     gap:6px;
   }
 }
+
+
+/* V7: robust mobile header controls */
+.mobile-menu-button{
+  display:none;
+  position:relative;
+  flex:0 0 40px;
+  width:40px;
+  min-width:40px;
+  max-width:40px;
+  height:40px;
+  min-height:40px;
+  max-height:40px;
+  padding:0!important;
+  margin:0;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:var(--paper);
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  appearance:none;
+  -webkit-appearance:none;
+}
+.mobile-menu-button .menu-line{
+  position:absolute;
+  left:50%;
+  width:16px;
+  height:2px;
+  margin:0;
+  border-radius:999px;
+  background:var(--ink);
+  transform:translateX(-50%);
+}
+.mobile-menu-button .menu-line:nth-child(1){top:13px}
+.mobile-menu-button .menu-line:nth-child(2){top:19px}
+.mobile-menu-button .menu-line:nth-child(3){top:25px}
+
+.mobile-profile{
+  display:none!important;
+  flex:0 0 38px;
+  width:38px;
+  min-width:38px;
+  height:38px;
+  min-height:38px;
+  padding:0;
+  border:0;
+}
+
+/* Prevent the House Rules cutoff badge from stretching */
+.score-orb,
+.house-rules .score-orb,
+.house-rules [class*="score-orb"]{
+  flex:0 0 64px!important;
+  width:64px!important;
+  min-width:64px!important;
+  max-width:64px!important;
+  height:64px!important;
+  min-height:64px!important;
+  max-height:64px!important;
+  aspect-ratio:1 / 1;
+  border-radius:50%!important;
+  padding:0!important;
+  display:grid!important;
+  place-items:center!important;
+  line-height:1!important;
+  white-space:nowrap;
+}
+
+/* Catch the alternate 5+ class used in this prototype */
+.house-rule-cutoff,
+.cutoff-circle,
+.rules-cutoff{
+  flex:0 0 64px;
+  width:64px;
+  min-width:64px;
+  max-width:64px;
+  height:64px;
+  min-height:64px;
+  max-height:64px;
+  aspect-ratio:1 / 1;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  padding:0;
+  line-height:1;
+}
+
+@media(max-width:900px){
+  .mobile-menu-button{display:flex}
+}
+
+@media(max-width:620px){
+  .site-header{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) 40px 38px auto;
+    align-items:center;
+    gap:7px;
+  }
+  .mobile-menu-wrap{
+    display:block;
+    width:40px;
+  }
+  .desktop-profile{display:none!important}
+  .mobile-profile{display:grid!important}
+  .header-actions{
+    display:contents;
+  }
+  .header-actions .primary-btn{
+    grid-column:4;
+    white-space:nowrap;
+    padding:10px 13px;
+  }
+  .mobile-menu-wrap{grid-column:2}
+  .mobile-profile{grid-column:3}
+  .brand{grid-column:1}
+}
+
+@media(max-width:620px){
+  .header-actions .mobile-profile{
+    display:grid!important;
+  }
+}

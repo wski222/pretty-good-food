@@ -1,7 +1,6 @@
-# Pretty Good Food — Prototype V6
+# Pretty Good Food — Prototype V7
 
 Updates:
-- Compact hamburger-style mobile navigation
-- Friends tab and placeholder screen
-- Tagline changed to “Make it. Review it. Share it.”
-- Improved centering of modal close buttons
+- Fixed mobile hamburger icon rendering
+- Added mobile profile initials button
+- Forced the House Rules 5+ badge to remain a true circle
