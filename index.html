@@ -19,6 +19,15 @@
     <button class="nav" data-view="saved">Want to Make</button>
     <button class="nav" data-view="collections">Collections</button>
   </nav>
+  <label class="mobile-nav-wrap" aria-label="Choose a page">
+    <span>View</span>
+    <select id="mobileNav">
+      <option value="home">Home</option>
+      <option value="cookbook">My Cookbook</option>
+      <option value="saved">Want to Make</option>
+      <option value="collections">Collections</option>
+    </select>
+  </label>
   <div class="header-actions">
     <span class="avatar avatar-will">WK</span>
     <button class="primary" id="addBtn">+ Add</button>
@@ -29,21 +38,21 @@
   <section id="home" class="view active">
     <div class="home-top">
       <div class="home-title">
-        <p class="eyebrow">FRIENDS, FOOD & HONEST SCORES</p>
+        <p class="eyebrow home-description">UPLOAD IT. REVIEW IT. SHARE IT.</p>
         <h1>What’s for dinner?</h1>
       </div>
       <aside class="house-rules">
         <div class="rules-head">
           <div>
             <p class="eyebrow">THE HOUSE RULES</p>
-            <h2>Use the whole scale.</h2>
+            <h2>Use the whole scale.</h2><p class="rules-note">A 5 or higher means it was good enough to make again.</p>
           </div>
           <strong class="rule-cutoff">5+</strong>
         </div>
         <div class="score-timeline" aria-label="Ratings from one to ten">
           <div class="timeline-numbers"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
           <div class="timeline-track"><span class="timeline-progress"></span><i class="timeline-cutoff"></i></div>
-          <div class="timeline-labels"><span>Disaster</span><span>5 = Fine</span><span>Cherish every bite</span></div>
+          <div class="timeline-labels"><span>Disaster</span><span>5+ = Make it again</span><span>Cherish every bite</span></div>
         </div>
         <button class="score-toggle" id="scoreToggle">See the full scoring guide</button>
         <div class="score-guide hidden" id="scoreGuide">
@@ -52,7 +61,7 @@
             <div><b>2</b><span>Would rather have Canned Tuna</span></div>
             <div><b>3</b><span>Might as well get Mickie Ds</span></div>
             <div><b>4</b><span>If I’m drunk, I’ll eat it</span></div>
-            <div><b>5</b><span>Fine — okay to have again, but won’t ask for it</span></div>
+            <div><b>5</b><span>Fine, ok to have again</span></div>
           </div>
           <div class="score-column">
             <div><b>6</b><span>A good, solid meal</span></div>
