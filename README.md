@@ -1,7 +1,3 @@
-# Pretty Good Food — Prototype V8
+# Pretty Good Food — Prototype V9
 
-Updates:
-- Rebuilt mobile header into a stable logo + controls layout
-- Menu, WK profile, and Add all remain visible
-- Add button keeps its full label
-- House Rules 5+ badge is locked to a true circle
+Mobile header rebuilt with a fixed four-column layout so the menu, WK profile, and + Add button always fit inside the viewport.

@@ -440,3 +440,136 @@ body{overflow-x:hidden}
   .profile-button{width:34px;min-width:34px;height:34px;min-height:34px}
   .add-button{min-width:60px;padding:0 10px}
 }
+
+/* V9: deterministic mobile header layout */
+@media (max-width: 620px) {
+  .site-header {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: minmax(130px, 1fr) 40px 36px 64px !important;
+    align-items: center !important;
+    column-gap: 6px !important;
+    padding: 11px 10px !important;
+    overflow: visible !important;
+  }
+
+  .site-header .brand {
+    grid-column: 1 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    font-size: 18px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .site-header .main-nav {
+    display: none !important;
+  }
+
+  .site-header .header-actions {
+    display: contents !important;
+  }
+
+  .site-header .mobile-menu-wrap {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    margin: 0 !important;
+  }
+
+  .site-header .mobile-menu-button {
+    display: flex !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+  }
+
+  .site-header .profile-button {
+    grid-column: 3 !important;
+    grid-row: 1 !important;
+    display: grid !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    max-width: 36px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+    max-height: 36px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .site-header .add-button {
+    grid-column: 4 !important;
+    grid-row: 1 !important;
+    display: inline-flex !important;
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    height: 40px !important;
+    min-height: 40px !important;
+    max-height: 40px !important;
+    margin: 0 !important;
+    padding: 0 9px !important;
+    gap: 3px !important;
+    border-radius: 999px !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .site-header .add-button span {
+    display: inline-block !important;
+    flex: 0 0 auto !important;
+    line-height: 1 !important;
+  }
+
+  .site-header .add-plus {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header {
+    grid-template-columns: minmax(116px, 1fr) 38px 34px 60px !important;
+    column-gap: 5px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .site-header .brand { font-size: 16px !important; }
+  .site-header .mobile-menu-wrap,
+  .site-header .mobile-menu-button {
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+  }
+  .site-header .profile-button {
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+    height: 34px !important;
+    min-height: 34px !important;
+    max-height: 34px !important;
+  }
+  .site-header .add-button {
+    width: 60px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    padding: 0 7px !important;
+    font-size: 13px !important;
+  }
+}
