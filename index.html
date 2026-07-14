@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pretty Good Food</title>
+  <meta name="description" content="A shared cookbook built on honest recommendations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#" data-view-link="home">Pretty Good Food</a>
+  <nav class="main-nav" aria-label="Primary navigation">
+    <button class="nav active" data-view="home">Home</button>
+    <button class="nav" data-view="cookbook">My Cookbook</button>
+    <button class="nav" data-view="saved">Want to Make</button>
+    <button class="nav" data-view="collections">Collections</button>
+  </nav>
+  <div class="header-actions">
+    <span class="avatar avatar-will">WK</span>
+    <button class="primary" id="addBtn">+ Add</button>
+  </div>
+</header>
+
+<main class="shell">
+  <section id="home" class="view active">
+    <div class="home-top">
+      <div class="home-title">
+        <p class="eyebrow">FRIENDS, FOOD & HONEST SCORES</p>
+        <h1>What’s for dinner?</h1>
+      </div>
+      <aside class="house-rules">
+        <div class="rules-head">
+          <div>
+            <p class="eyebrow">THE HOUSE RULES</p>
+            <h2>Use the whole scale.</h2>
+          </div>
+          <strong class="rule-cutoff">5+</strong>
+        </div>
+        <div class="score-timeline" aria-label="Ratings from one to ten">
+          <div class="timeline-numbers"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div>
+          <div class="timeline-track"><span class="timeline-progress"></span><i class="timeline-cutoff"></i></div>
+          <div class="timeline-labels"><span>Disaster</span><span>5 = Fine</span><span>Cherish every bite</span></div>
+        </div>
+        <button class="score-toggle" id="scoreToggle">See the full scoring guide</button>
+        <div class="score-guide hidden" id="scoreGuide">
+          <div class="score-column">
+            <div><b>1</b><span>Disaster</span></div>
+            <div><b>2</b><span>Would rather have Canned Tuna</span></div>
+            <div><b>3</b><span>Might as well get Mickie Ds</span></div>
+            <div><b>4</b><span>If I’m drunk, I’ll eat it</span></div>
+            <div><b>5</b><span>Fine — okay to have again, but won’t ask for it</span></div>
+          </div>
+          <div class="score-column">
+            <div><b>6</b><span>A good, solid meal</span></div>
+            <div><b>7</b><span>I enjoyed that</span></div>
+            <div><b>8</b><span>Things are heating up, I need more</span></div>
+            <div><b>9</b><span>I can’t talk, gotta eat</span></div>
+            <div><b>10</b><span>Cherish every bite</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="filterbar">
+      <div class="quick-filters">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="food">Food</button>
+        <button class="chip" data-filter="cocktail">Cocktails</button>
+        <button class="chip" data-filter="weeknight">Quick weeknight</button>
+        <button class="chip" data-filter="party">For a party</button>
+        <button class="chip" data-filter="healthy">Healthy</button>
+        <button class="chip" data-filter="treat">Treat yourself</button>
+        <button class="chip" data-filter="top">8.0+</button>
+      </div>
+      <button class="filter-button" id="filterBtn">All filters <span>☰</span></button>
+    </div>
+
+    <div class="section-head"><p class="eyebrow">THE FEED</p></div>
+    <div id="feed" class="feed"></div>
+  </section>
+
+  <section id="cookbook" class="view">
+    <div class="page-head">
+      <div><p class="eyebrow">YOUR PERSONAL ARCHIVE</p><h1>My Cookbook</h1></div>
+      <div class="stats"><div><strong id="madeStat">0</strong><span>Made</span></div><div><strong id="avgStat">0.0</strong><span>Avg. rating</span></div><div><strong id="againStat">0%</strong><span>5+</span></div></div>
+    </div>
+    <div class="toolbar"><input id="search" placeholder="Search your cookbook"><select id="typeFilter"><option value="all">Food & cocktails</option><option value="food">Food only</option><option value="cocktail">Cocktails only</option></select><select id="sort"><option value="recent">Recently made</option><option value="rating">Highest rated</option><option value="name">A–Z</option></select></div>
+    <div id="myGrid" class="grid"></div>
+  </section>
+
+  <section id="saved" class="view"><div class="page-head"><div><p class="eyebrow">IDEAS FOR LATER</p><h1>Want to Make</h1></div></div><div id="savedGrid" class="grid"></div></section>
+
+  <section id="collections" class="view"><div class="page-head"><div><p class="eyebrow">ORGANIZED YOUR WAY</p><h1>Collections</h1></div><button class="primary">+ New Collection</button></div><div class="collections"><article style="background-image:url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=80')"><div><small>12 ITEMS</small><h3>Cocktail Friday</h3></div></article><article style="background-image:url('https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1200&q=80')"><div><small>9 ITEMS</small><h3>Quick Weeknight</h3></div></article><article style="background-image:url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80')"><div><small>7 ITEMS</small><h3>For a Party</h3></div></article><article style="background-image:url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80')"><div><small>6 ITEMS</small><h3>Jillian’s Favorites</h3></div></article></div></section>
+</main>
+
+<div id="scrim" class="scrim"></div>
+<aside id="filters" class="filter-panel" aria-hidden="true">
+  <div class="panel-head"><div><p class="eyebrow">REFINE THE FEED</p><h2>Filters</h2></div><button class="close" data-close="panel">×</button></div>
+  <div class="filter-scroll">
+    <section class="filter-section"><label class="range-label">Minimum rating <b id="rangeOut">5.0</b></label><input id="range" type="range" min="1" max="10" step=".1" value="5.0"></section>
+    <section class="filter-section"><h4>Entry type</h4><div class="seg"><button class="segbtn active" data-type="all">All</button><button class="segbtn" data-type="food">Food</button><button class="segbtn" data-type="cocktail">Cocktails</button></div></section>
+    <section class="filter-section food-filter-group"><h4>Food</h4><label>Cooking method<select data-filter-field="method"><option value="">Any method</option><option>Oven</option><option>Grill</option><option>Stovetop</option><option>Air Fryer</option><option>Smoker</option><option>Slow Cooker</option><option>Pressure Cooker</option><option>No Cook</option><option>Mixed Methods</option></select></label><label>Cuisine<select data-filter-field="cuisine"><option value="">Any cuisine</option><option>American</option><option>Italian</option><option>Mexican</option><option>Asian</option><option>Mediterranean</option><option>French</option><option>Southern</option><option>BBQ</option><option>Seafood</option><option>Other</option></select></label><label>Occasion<select data-filter-field="occasion"><option value="">Any occasion</option><option>Breakfast</option><option>Brunch</option><option>Lunch</option><option>Dinner</option><option>Happy Hour</option><option>Snack</option><option>Holiday</option><option>Party</option></select></label><label>Dish type<select data-filter-field="dishType"><option value="">Any dish type</option><option>Dinner</option><option>Lunch</option><option>Appetizer</option><option>Side Dish</option><option>Salad</option><option>Soup</option><option>Sandwich / Wrap</option><option>Pasta</option><option>Pizza / Flatbread</option><option>Dessert</option><option>Baked Good</option><option>Sauce / Dip</option></select></label><label>Best for<select data-filter-field="bestFor"><option value="">Any recommendation</option><option>Quick Weeknight</option><option>Family Dinner</option><option>Date Night</option><option>Dinner Party</option><option>For a Party</option><option>Game Day</option><option>Great Leftovers</option><option>Weekend Project</option><option>Healthy</option><option>Treat Yourself</option></select></label></section>
+    <section class="filter-section cocktail-filter-group"><h4>Cocktails</h4><label>Base spirit<select data-filter-field="baseSpirit"><option value="">Any base spirit</option><option>Bourbon</option><option>Rye</option><option>Scotch</option><option>Tequila</option><option>Mezcal</option><option>Gin</option><option>Vodka</option><option>Rum</option><option>Brandy / Cognac</option><option>Wine / Champagne</option><option>Non-Alcoholic</option></select></label><label>Style / served<select data-filter-field="style"><option value="">Any style</option><option>On the Rocks</option><option>Neat</option><option>Up</option><option>Shaken</option><option>Stirred</option><option>Frozen</option><option>Hot</option><option>Built in Glass</option><option>Batch / Pitcher</option></select></label><label>Difficulty<select data-filter-field="difficulty"><option value="">Any difficulty</option><option>Very Easy</option><option>Easy</option><option>Moderate</option><option>Complex</option><option>Bar Cart Required</option></select></label><label>Flavor profile<select data-filter-field="flavor"><option value="">Any flavor</option><option>Sweet</option><option>Sour</option><option>Bitter</option><option>Spirit Forward</option><option>Citrusy</option><option>Fruity</option><option>Herbal</option><option>Smoky</option><option>Spicy</option><option>Refreshing</option></select></label><label>Best season<select data-filter-field="season"><option value="">Any season</option><option>Spring</option><option>Summer</option><option>Fall</option><option>Winter</option><option>Anytime</option></select></label></section>
+  </div>
+  <button class="primary wide" id="apply">Apply filters</button>
+</aside>
+
+<dialog id="detail"><button class="close dialog-close">×</button><div id="detailBody"></div></dialog>
+
+<dialog id="create">
+  <button class="close create-close">×</button>
+  <div class="create-wrap">
+    <p class="eyebrow center">ADD TO PRETTY GOOD FOOD</p><h2 class="center">Log what you made</h2>
+    <div class="switch"><button class="entry active" data-entry="food">🍽 <strong>Food</strong></button><button class="entry" data-entry="cocktail">🍸 <strong>Cocktail</strong></button></div>
+    <form id="form">
+      <section class="form-section"><span class="step">01</span><div><h3>Basics</h3><div class="form-grid"><label class="full">Name<input name="name" required placeholder="Crispy salmon rice bowls"></label><label>Date made<input id="date" type="date" required></label><label>Source<select><option>Website</option><option>Cookbook</option><option>Family Recipe</option><option>Friend</option><option>My Own</option><option>Restaurant Inspired</option><option>Other</option></select></label><label class="full">Recipe link<input type="url" placeholder="https://"></label></div></div></section>
+
+      <section class="form-section"><span class="step">02</span><div><h3>Rating & review</h3><div class="rating-input-row"><input id="ratingInput" type="number" min="1" max="10" step=".1" value="7.0"><div><strong id="meaning">I enjoyed that</strong><small>5+ means it was fine to have again</small></div></div><label>Why this rating?<textarea rows="4" required placeholder="What worked, what didn’t, and whether it was worth the effort."></textarea></label><div class="form-grid"><label>What I changed<textarea rows="3"></textarea></label><label>Next time<textarea rows="3"></textarea></label></div></div></section>
+
+      <section class="form-section"><span class="step">03</span><div><h3>Recipe</h3><label>Ingredients <small>Paste a bulleted list</small><textarea id="ingredientsBox" class="big-box" rows="9" placeholder="• 1 lb salmon, cubed&#10;• 2 cups cooked rice&#10;• 1 cucumber, thinly sliced"></textarea></label><label class="photo-label">Ingredient page photo(s) <small>for cookbook pages or handwritten recipes</small><input type="file" accept="image/*" multiple data-preview="ingredientPreview"></label><div id="ingredientPreview" class="photo-preview-grid"></div><label>Directions <small>Paste numbered or bulleted steps</small><textarea id="directionsBox" class="big-box" rows="9" placeholder="1. Season and sear the salmon.&#10;2. Toss cucumber with lime and salt.&#10;3. Build the bowls."></textarea></label><label class="photo-label">Directions page photo(s)<input type="file" accept="image/*" multiple data-preview="directionPreview"></label><div id="directionPreview" class="photo-preview-grid"></div></div></section>
+
+      <section id="foodFields" class="form-section"><span class="step">04</span><div><h3>Food details</h3><div class="form-grid"><label>Meal occasion<select><option>Breakfast</option><option>Brunch</option><option>Lunch</option><option selected>Dinner</option><option>Happy Hour</option><option>Snack</option><option>Holiday</option><option>Party</option></select></label><label>Dish type<select><option>Dinner</option><option>Lunch</option><option>Appetizer</option><option>Side Dish</option><option>Salad</option><option>Soup</option><option>Sandwich / Wrap</option><option>Pasta</option><option>Pizza / Flatbread</option><option>Dessert</option><option>Baked Good</option><option>Sauce / Dip</option></select></label><label>Cuisine<select><option>American</option><option>Italian</option><option>Mexican</option><option>Asian</option><option>Mediterranean</option><option>French</option><option>Southern</option><option>BBQ</option><option>Seafood</option><option>Other</option></select></label><label>Cooking method<select><option>Oven</option><option>Grill</option><option>Stovetop</option><option>Air Fryer</option><option>Smoker</option><option>Slow Cooker</option><option>Pressure Cooker</option><option>No Cook</option><option>Mixed Methods</option></select></label><label>Prep time (min)<input type="number" min="0"></label><label>Cook time (min)<input type="number" min="0"></label><label>Additional time (min)<input type="number" min="0"></label><label>Servings<input type="number" min="1"></label></div><label>Best for</label><div class="tagpick"><button type="button">Quick Weeknight</button><button type="button">Family Dinner</button><button type="button">Date Night</button><button type="button">Dinner Party</button><button type="button">For a Party</button><button type="button">Game Day</button><button type="button">Great Leftovers</button><button type="button">Weekend Project</button><button type="button">Healthy</button><button type="button">Treat Yourself</button></div></div></section>
+
+      <section id="cocktailFields" class="form-section hidden"><span class="step">04</span><div><h3>Cocktail details</h3><div class="form-grid"><label>Base spirit<select><option>Bourbon</option><option>Rye</option><option>Scotch</option><option>Tequila</option><option>Mezcal</option><option>Gin</option><option>Vodka</option><option>Rum</option><option>Brandy / Cognac</option><option>Wine / Champagne</option><option>Non-Alcoholic</option></select></label><label>Difficulty<select><option>Very Easy</option><option>Easy</option><option>Moderate</option><option>Complex</option><option>Bar Cart Required</option></select></label><label>Best season<select><option>Spring</option><option>Summer</option><option>Fall</option><option>Winter</option><option>Anytime</option></select></label><label>Best occasion<select><option>Happy Hour</option><option>Before Dinner</option><option>After Dinner</option><option>Brunch</option><option>Pool Day</option><option>Lake Day</option><option>Holiday Party</option><option>Watching Sports</option><option>Date Night</option><option>Celebration</option><option>Fireside</option></select></label></div><label>Preparation & serve style</label><div class="tagpick"><button type="button">On the Rocks</button><button type="button">Neat</button><button type="button">Up</button><button type="button">Shaken</button><button type="button">Stirred</button><button type="button">Frozen</button><button type="button">Hot</button><button type="button">Built in Glass</button><button type="button">Batch / Pitcher</button></div><label>Flavor profile</label><div class="tagpick"><button type="button">Sweet</button><button type="button">Sour</button><button type="button">Bitter</button><button type="button">Spirit Forward</button><button type="button">Citrusy</button><button type="button">Fruity</button><button type="button">Herbal</button><button type="button">Smoky</button><button type="button">Spicy</button><button type="button">Refreshing</button></div></div></section>
+
+      <section class="form-section"><span class="step">05</span><div><h3>Photos</h3><label>Cover and additional photos <small>first image becomes the cover</small><input type="file" accept="image/*" multiple data-preview="mainPreview"></label><div id="mainPreview" class="photo-preview-grid large-preview"></div></div></section>
+      <div class="submit-row"><span id="againPill" class="again-pill">✓ Fine to have again</span><button class="primary large" type="submit">Save to My Cookbook</button></div>
+    </form>
+  </div>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
