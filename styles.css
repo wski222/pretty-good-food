@@ -82,3 +82,139 @@ body{overflow-x:hidden}
   }
   .score-column span{font-size:.75rem}
 }
+
+
+/* V6: compact mobile menu */
+.mobile-nav-wrap{display:none!important}
+
+.mobile-menu-wrap{
+  display:none;
+  position:relative;
+}
+.mobile-menu-button{
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  border-radius:50%;
+  background:var(--paper);
+  padding:0;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:4px;
+}
+.mobile-menu-button span{
+  display:block;
+  width:16px;
+  height:2px;
+  border-radius:999px;
+  background:var(--ink);
+}
+.mobile-menu{
+  position:absolute;
+  top:48px;
+  right:0;
+  min-width:190px;
+  padding:8px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--paper);
+  box-shadow:var(--shadow);
+  opacity:0;
+  transform:translateY(-6px);
+  pointer-events:none;
+  transition:.18s ease;
+  z-index:50;
+}
+.mobile-menu.open{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.mobile-menu button{
+  width:100%;
+  border:0;
+  background:transparent;
+  text-align:left;
+  padding:11px 12px;
+  border-radius:10px;
+  color:var(--ink);
+  font-weight:700;
+}
+.mobile-menu button:hover,
+.mobile-menu button.active{
+  background:var(--soft);
+}
+
+/* Center dialog close icons consistently */
+.dialog-close,
+.create-close{
+  display:flex!important;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+  padding:0;
+  text-align:center;
+}
+.dialog-close::before,
+.create-close::before{
+  line-height:1;
+}
+
+/* Friends placeholder */
+.friends-placeholder{
+  max-width:620px;
+  margin:28px auto 0;
+  padding:48px 28px;
+  text-align:center;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:var(--paper);
+}
+.friends-placeholder h2{
+  margin-bottom:10px;
+}
+.friends-placeholder p{
+  color:var(--muted);
+  line-height:1.6;
+  margin-bottom:22px;
+}
+.friends-icon{
+  width:56px;
+  height:56px;
+  margin:0 auto 18px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--soft);
+  color:var(--olive);
+  font-size:1.5rem;
+}
+
+@media(max-width:900px){
+  .mobile-menu-wrap{
+    display:block;
+  }
+}
+
+@media(max-width:620px){
+  .site-header{
+    grid-template-columns:minmax(0,1fr) auto auto;
+    gap:8px;
+  }
+  .mobile-menu-wrap{
+    grid-column:auto;
+    grid-row:auto;
+  }
+  .brand{
+    min-width:0;
+  }
+  .brand-main{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .header-actions{
+    gap:6px;
+  }
+}

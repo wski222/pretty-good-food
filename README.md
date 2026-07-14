@@ -1,9 +1,7 @@
-# Pretty Good Food — Prototype V5
+# Pretty Good Food — Prototype V6
 
 Updates:
-- Upload/review/share home description
-- Clear 5+ House Rules cutoff
-- Revised score-five language
-- Mobile page-navigation dropdown
-- Horizontally scrolling quick filters on mobile
-- Page-width overflow fix
+- Compact hamburger-style mobile navigation
+- Friends tab and placeholder screen
+- Tagline changed to “Make it. Review it. Share it.”
+- Improved centering of modal close buttons

@@ -18,16 +18,20 @@
     <button class="nav" data-view="cookbook">My Cookbook</button>
     <button class="nav" data-view="saved">Want to Make</button>
     <button class="nav" data-view="collections">Collections</button>
+    <button class="nav" data-view="friends">Friends</button>
   </nav>
-  <label class="mobile-nav-wrap" aria-label="Choose a page">
-    <span>View</span>
-    <select id="mobileNav">
-      <option value="home">Home</option>
-      <option value="cookbook">My Cookbook</option>
-      <option value="saved">Want to Make</option>
-      <option value="collections">Collections</option>
-    </select>
-  </label>
+  <div class="mobile-menu-wrap">
+    <button id="mobileMenuButton" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+      <button data-mobile-view="home">Home</button>
+      <button data-mobile-view="cookbook">My Cookbook</button>
+      <button data-mobile-view="saved">Want to Make</button>
+      <button data-mobile-view="collections">Collections</button>
+      <button data-mobile-view="friends">Friends</button>
+    </div>
+  </div>
   <div class="header-actions">
     <span class="avatar avatar-will">WK</span>
     <button class="primary" id="addBtn">+ Add</button>
@@ -38,7 +42,7 @@
   <section id="home" class="view active">
     <div class="home-top">
       <div class="home-title">
-        <p class="eyebrow home-description">UPLOAD IT. REVIEW IT. SHARE IT.</p>
+        <p class="eyebrow home-description">MAKE IT. REVIEW IT. SHARE IT.</p>
         <h1>What’s for dinner?</h1>
       </div>
       <aside class="house-rules">
@@ -104,6 +108,23 @@
   <section id="saved" class="view"><div class="page-head"><div><p class="eyebrow">IDEAS FOR LATER</p><h1>Want to Make</h1></div></div><div id="savedGrid" class="grid"></div></section>
 
   <section id="collections" class="view"><div class="page-head"><div><p class="eyebrow">ORGANIZED YOUR WAY</p><h1>Collections</h1></div><button class="primary">+ New Collection</button></div><div class="collections"><article style="background-image:url('https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=80')"><div><small>12 ITEMS</small><h3>Cocktail Friday</h3></div></article><article style="background-image:url('https://images.unsplash.com/photo-1543353071-873f17a7a088?auto=format&fit=crop&w=1200&q=80')"><div><small>9 ITEMS</small><h3>Quick Weeknight</h3></div></article><article style="background-image:url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80')"><div><small>7 ITEMS</small><h3>For a Party</h3></div></article><article style="background-image:url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80')"><div><small>6 ITEMS</small><h3>Jillian’s Favorites</h3></div></article></div></section>
+
+<section id="friends" class="view">
+  <div class="page-title-row">
+    <div>
+      <p class="eyebrow">Your food circle</p>
+      <h1>Friends</h1>
+      <p class="hero-copy">Follow friends, see what they’ve made, and build a feed around people whose taste you trust.</p>
+    </div>
+  </div>
+  <div class="friends-placeholder">
+    <div class="friends-icon">◎</div>
+    <h2>Friend connections are coming next.</h2>
+    <p>This is where you’ll search for friends, follow them, and manage whose recipes appear in your feed.</p>
+    <button class="primary-btn" type="button">Find Friends</button>
+  </div>
+</section>
+
 </main>
 
 <div id="scrim" class="scrim"></div>
