@@ -1,6 +1,7 @@
-# Pretty Good Food — Prototype V7
+# Pretty Good Food — Prototype V8
 
 Updates:
-- Fixed mobile hamburger icon rendering
-- Added mobile profile initials button
-- Forced the House Rules 5+ badge to remain a true circle
+- Rebuilt mobile header into a stable logo + controls layout
+- Menu, WK profile, and Add all remain visible
+- Add button keeps its full label
+- House Rules 5+ badge is locked to a true circle

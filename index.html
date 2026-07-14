@@ -20,23 +20,23 @@
     <button class="nav" data-view="collections">Collections</button>
     <button class="nav" data-view="friends">Friends</button>
   </nav>
-  <div class="mobile-menu-wrap">
-    <button id="mobileMenuButton" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false">
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-      <span class="menu-line"></span>
-    </button>
-    <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-      <button data-mobile-view="home">Home</button>
-      <button data-mobile-view="cookbook">My Cookbook</button>
-      <button data-mobile-view="saved">Want to Make</button>
-      <button data-mobile-view="collections">Collections</button>
-      <button data-mobile-view="friends">Friends</button>
-    </div>
-  </div>
   <div class="header-actions">
-    <span class="avatar avatar-will">WK</span>
-    <button class="primary" id="addBtn">+ Add</button>
+    <div class="mobile-menu-wrap">
+      <button id="mobileMenuButton" class="mobile-menu-button" aria-label="Open navigation" aria-expanded="false">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <button data-mobile-view="home">Home</button>
+        <button data-mobile-view="cookbook">My Cookbook</button>
+        <button data-mobile-view="saved">Want to Make</button>
+        <button data-mobile-view="collections">Collections</button>
+        <button data-mobile-view="friends">Friends</button>
+      </div>
+    </div>
+    <button class="avatar avatar-will profile-button" aria-label="Open Will's profile">WK</button>
+    <button class="primary add-button" id="addBtn"><span class="add-plus">+</span><span>Add</span></button>
   </div>
 </header>
 

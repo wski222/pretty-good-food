@@ -341,3 +341,102 @@ body{overflow-x:hidden}
     display:grid!important;
   }
 }
+
+
+/* V8 mobile header: stable two-zone layout */
+.profile-button{
+  border:0;
+  padding:0;
+  flex:0 0 36px;
+  width:36px;
+  min-width:36px;
+  height:36px;
+  min-height:36px;
+}
+.add-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  flex:0 0 auto;
+  min-width:70px;
+  height:40px;
+  padding:0 14px;
+  white-space:nowrap;
+  line-height:1;
+}
+.add-plus{font-size:1.05rem;line-height:1}
+
+/* The actual House Rules badge class */
+.rule-cutoff{
+  flex:0 0 58px!important;
+  width:58px!important;
+  min-width:58px!important;
+  max-width:58px!important;
+  height:58px!important;
+  min-height:58px!important;
+  max-height:58px!important;
+  aspect-ratio:1 / 1!important;
+  border-radius:50%!important;
+  padding:0!important;
+  line-height:1!important;
+  display:grid!important;
+  place-items:center!important;
+  white-space:nowrap;
+}
+
+@media(max-width:900px){
+  .site-header{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    gap:12px!important;
+  }
+  .header-actions{
+    display:flex!important;
+    align-items:center;
+    justify-content:flex-end;
+    gap:8px;
+    min-width:max-content;
+  }
+  .mobile-menu-wrap{
+    display:block!important;
+    width:40px;
+    flex:0 0 40px;
+  }
+  .mobile-menu-button{display:flex!important}
+  .profile-button{display:grid!important}
+}
+
+@media(max-width:620px){
+  .site-header{
+    grid-template-columns:minmax(0,1fr) auto!important;
+    padding:11px 12px!important;
+    gap:8px!important;
+  }
+  .brand{
+    min-width:0;
+    font-size:1rem!important;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .header-actions{
+    display:flex!important;
+    gap:6px!important;
+  }
+  .mobile-menu-wrap{grid-column:auto!important;grid-row:auto!important}
+  .header-actions .avatar{
+    display:grid!important;
+  }
+  .add-button{
+    min-width:66px;
+    height:40px;
+    padding:0 12px;
+  }
+}
+
+@media(max-width:370px){
+  .brand{font-size:.94rem!important}
+  .header-actions{gap:5px!important}
+  .profile-button{width:34px;min-width:34px;height:34px;min-height:34px}
+  .add-button{min-width:60px;padding:0 10px}
+}
